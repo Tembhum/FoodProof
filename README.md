@@ -14,5 +14,39 @@
 * For instance, if you buy a Louis Vuitton bag from Paris, the bag will probably cost a fortune. This implies that customers will be more comfortable if they are provided with provenance from LV itself and these origin proof’s integrity should remain. 
 * Smart contract are globally trusted (if the system is fully open sourced and well-designed)
 
+## Folder Structure:
+```
+.
+├── contract
+├── frontend
+├── migrations
+├── tests
+├── package.json
+├── README.md
+└── truffle-config.js
+```
+
+## Installation (Front End)
+Use the package manager [npm](https://docs.npmjs.com/cli/v8/commands/npm-install) to install dependencies in frontend.
+
+#### Build and run
+* Dockerfile => docker build -t brandtrace-frontend . && docker run brandtrace-frontend
+* npm => npm install && npm start
+* yarn => yarn install && yarn start
+
+##### Configurating new addresses and abi
+```
+.
+├── contract
+├── frontend
+|       └── src
+|            └── abi
+|                 └── abis
+.
+.
+.
+└── truffle-config.js
+```
+
 
 
