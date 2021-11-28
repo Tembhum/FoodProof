@@ -64,9 +64,9 @@
         "type": "string"
       },
       {
-        "internalType": "bytes32",
+        "internalType": "string",
         "name": "company_code",
-        "type": "bytes32"
+        "type": "string"
       },
       {
         "internalType": "string",
@@ -99,6 +99,30 @@
     "inputs": [
       {
         "internalType": "string",
+        "name": "a",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "b",
+        "type": "string"
+      }
+    ],
+    "name": "compareStrings",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
         "name": "_id",
         "type": "string"
       }
@@ -106,9 +130,9 @@
     "name": "getCompanyCode",
     "outputs": [
       {
-        "internalType": "bytes32",
+        "internalType": "string",
         "name": "",
-        "type": "bytes32"
+        "type": "string"
       }
     ],
     "stateMutability": "view",
@@ -141,9 +165,9 @@
         "type": "address"
       },
       {
-        "internalType": "bytes32",
+        "internalType": "string",
         "name": "_companycode",
-        "type": "bytes32"
+        "type": "string"
       }
     ],
     "name": "isAuthorized",
@@ -208,25 +232,6 @@
     "name": "renounceOwnership",
     "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "source",
-        "type": "string"
-      }
-    ],
-    "name": "stringToBytes32",
-    "outputs": [
-      {
-        "internalType": "bytes32",
-        "name": "result",
-        "type": "bytes32"
-      }
-    ],
-    "stateMutability": "pure",
     "type": "function"
   },
   {

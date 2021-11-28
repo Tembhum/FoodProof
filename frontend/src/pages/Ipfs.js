@@ -22,6 +22,7 @@ function Ipfs() {
       console.log("Error uploading file: ", error);
     }
   }
+  
   return (
     <div className="App">
       <h1>IPFS Example</h1>

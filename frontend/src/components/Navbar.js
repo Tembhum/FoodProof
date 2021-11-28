@@ -12,11 +12,15 @@ export default class Navbar extends React.Component {
     return (
       <Card className="nav-card">
         <nav>
-          <ul className="link-header">
-            <li className="link-list">
-              <Link to="/producer">Producer</Link>
-            </li>
-          </ul>
+          <li className="link-list">
+            <Link to="/">Home</Link>
+            <br></br>
+            <Link to="/newproduct">Create New Product</Link>
+            <br></br>
+            <Link to="/registerproducer">Register New Producer</Link>
+            <br></br>
+            <Link to="/verifier">Verifier</Link>
+          </li>
         </nav>
       </Card>
     );

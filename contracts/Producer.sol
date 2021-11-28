@@ -15,7 +15,7 @@ contract Producer is Ownable {
 
     struct ProducerInfo {
         string id;
-        bytes32 company_code;
+        string company_code;
         string name;
         uint expireTime;
     }
@@ -38,17 +38,17 @@ contract Producer is Ownable {
     function registerProducer(address _producer, string memory _company_code, string memory _id, string memory _name, uint _validDuration) onlyAdmin public{
         Producers[_producer].id = _id;
         Producers[_producer].name = _name;
-        Producers[_producer].company_code = stringToBytes32(_company_code);
+        Producers[_producer].company_code = _company_code;
         Producers[_producer].expireTime = block.timestamp + _validDuration;
         ProducerAddresses[_id] = _producer;
         emit NewProducer(_producer, _id, _name);
     }
 
-    function isAuthorized(address _producer, bytes32 _companycode) public view returns (bool){
-        if (_companycode != Producers[_producer].company_code){
-            return false;
-        } else {
+    function isAuthorized(address _producer, string memory _companycode) public view returns (bool){
+        if (compareStrings(_companycode,Producers[_producer].company_code)){
             return true;
+        } else {
+            return false;
         }
     }
 
@@ -56,18 +56,22 @@ contract Producer is Ownable {
         return ProducerAddresses[_id];
     }
     
-    function getCompanyCode(string memory _id) public view returns (bytes32) {
+    function getCompanyCode(string memory _id) public view returns (string memory) {
         return Producers[ProducerAddresses[_id]].company_code;
     }
 
-    function stringToBytes32(string memory source) public pure returns (bytes32 result) {
-        bytes memory tempEmptyStringTest = bytes(source);
-        if (tempEmptyStringTest.length == 0) {
-            return 0x0;
-        }
-        assembly {
-            result := mload(add(source, 32))
-        }
+    // function stringToBytes32(string memory source) public pure returns (bytes32 result) {
+    //     bytes memory tempEmptyStringTest = bytes(source);
+    //     if (tempEmptyStringTest.length == 0) {
+    //         return 0x0;
+    //     }
+    //     assembly {
+    //         result := mload(add(source, 32))
+    //     }
+    // }
+    
+    function compareStrings(string memory a, string memory b) public pure returns (bool) {
+        return (keccak256(abi.encodePacked((a))) == keccak256(abi.encodePacked((b))));
     }
 
 }

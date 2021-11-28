@@ -2,6 +2,101 @@
   {
     "inputs": [
       {
+        "internalType": "string",
+        "name": "_id",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_hash",
+        "type": "string"
+      }
+    ],
+    "name": "addPhoto",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "addVerifier",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_id",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_companycode",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "int256",
+        "name": "_price",
+        "type": "int256"
+      },
+      {
+        "internalType": "string",
+        "name": "_photoHash",
+        "type": "string"
+      }
+    ],
+    "name": "createProduct",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_id",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "deletePhoto",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_id",
+        "type": "string"
+      }
+    ],
+    "name": "destroyProduct",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "address",
         "name": "producer",
         "type": "address"
@@ -80,6 +175,106 @@
     "type": "event"
   },
   {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_id",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_hash",
+        "type": "string"
+      }
+    ],
+    "name": "receiveProduct",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_id",
+        "type": "string"
+      }
+    ],
+    "name": "returnProduct",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "toggleContractActive",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_id",
+        "type": "string"
+      }
+    ],
+    "name": "toVerify",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_id",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "_newOwner",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_hash",
+        "type": "string"
+      }
+    ],
+    "name": "transferOwner",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "stateMutability": "payable",
     "type": "fallback"
   },
@@ -91,43 +286,24 @@
         "type": "string"
       },
       {
-        "internalType": "string",
-        "name": "_companycode",
-        "type": "string"
+        "internalType": "bool",
+        "name": "_result",
+        "type": "bool"
       },
       {
         "internalType": "string",
-        "name": "_name",
-        "type": "string"
-      },
-      {
-        "internalType": "int256",
-        "name": "_price",
-        "type": "int256"
-      },
-      {
-        "internalType": "string",
-        "name": "_photoHash",
+        "name": "_comment",
         "type": "string"
       }
     ],
-    "name": "createProduct",
+    "name": "verifyProduct",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "_id",
-        "type": "string"
-      }
-    ],
-    "name": "destroyProduct",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    "stateMutability": "payable",
+    "type": "receive"
   },
   {
     "inputs": [
@@ -140,9 +316,33 @@
     "name": "getPhotoHash",
     "outputs": [
       {
-        "internalType": "bytes32",
+        "internalType": "string",
         "name": "",
-        "type": "bytes32"
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_id",
+        "type": "string"
+      }
+    ],
+    "name": "getPhotoToVerify",
+    "outputs": [
+      {
+        "internalType": "string[]",
+        "name": "",
+        "type": "string[]"
+      },
+      {
+        "internalType": "string[]",
+        "name": "",
+        "type": "string[]"
       }
     ],
     "stateMutability": "view",
@@ -166,9 +366,9 @@
             "type": "string"
           },
           {
-            "internalType": "bytes32",
+            "internalType": "string",
             "name": "companycode",
-            "type": "bytes32"
+            "type": "string"
           },
           {
             "internalType": "address",
@@ -201,24 +401,68 @@
             "type": "address[]"
           },
           {
-            "internalType": "bytes32[]",
+            "internalType": "string[]",
             "name": "oldOwnerPhoto",
-            "type": "bytes32[]"
+            "type": "string[]"
           },
           {
-            "internalType": "bytes32[]",
+            "internalType": "address[]",
+            "name": "oldPhotoOwner",
+            "type": "address[]"
+          },
+          {
+            "internalType": "address[]",
+            "name": "newPhotoOwner",
+            "type": "address[]"
+          },
+          {
+            "internalType": "string[]",
             "name": "newOwnerPhoto",
-            "type": "bytes32[]"
+            "type": "string[]"
           },
           {
             "internalType": "enum ProductManager.ProductStatus",
             "name": "productStatus",
             "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "productPositionInArray",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "verify",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "comment",
+            "type": "string"
           }
         ],
         "internalType": "struct ProductManager.Product",
         "name": "_product",
         "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "getProductList",
+    "outputs": [
+      {
+        "internalType": "string[]",
+        "name": "",
+        "type": "string[]"
       }
     ],
     "stateMutability": "view",
@@ -240,6 +484,30 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "ownerByProduct",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "string",
         "name": "",
         "type": "string"
@@ -253,9 +521,9 @@
         "type": "string"
       },
       {
-        "internalType": "bytes32",
+        "internalType": "string",
         "name": "companycode",
-        "type": "bytes32"
+        "type": "string"
       },
       {
         "internalType": "address",
@@ -286,42 +554,24 @@
         "internalType": "enum ProductManager.ProductStatus",
         "name": "productStatus",
         "type": "uint8"
+      },
+      {
+        "internalType": "uint256",
+        "name": "productPositionInArray",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "verify",
+        "type": "bool"
+      },
+      {
+        "internalType": "string",
+        "name": "comment",
+        "type": "string"
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "_id",
-        "type": "string"
-      }
-    ],
-    "name": "receiveProduct",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "renounceOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "_id",
-        "type": "string"
-      }
-    ],
-    "name": "returnProduct",
-    "outputs": [],
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -342,53 +592,5 @@
     ],
     "stateMutability": "pure",
     "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "toggleContractActive",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "_id",
-        "type": "string"
-      },
-      {
-        "internalType": "address",
-        "name": "_newOwner",
-        "type": "address"
-      }
-    ],
-    "name": "transferOwner",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "newOwner",
-        "type": "address"
-      }
-    ],
-    "name": "transferOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "stateMutability": "payable",
-    "type": "receive"
   }
 ]

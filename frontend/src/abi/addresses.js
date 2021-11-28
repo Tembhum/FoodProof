@@ -1,6 +1,6 @@
 const addresses = {
-  producer: "0x83dE4a99669FcdC16DE47F10e9639Ad8D6aFc39d",
-  productManager: "0x0f0DF8039248A3f7B708849308498BAE33e03578",
+  producer: "0x431C2103c4E858bc0C873083dC88565ce53D384F",
+  productManager: "0x42d5ECBD2038Bc99C2Ff9183765282955e6891e8",
 };
 
 export default addresses;
